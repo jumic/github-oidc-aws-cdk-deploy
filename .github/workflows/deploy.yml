@@ -15,10 +15,10 @@ jobs:
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v5.1.1
         with:
+          audience: sts.eusc-de-east-1.amazonaws.eu
+          aws-region: eusc-de-east-1
           role-to-assume: arn:aws-eusc:iam::074779644207:role/GitHubDeployRole
           role-session-name: GitHubAction
-          aws-region: eusc-de-east-1
-          audience: sts.amazonaws.eu
       - name: Deploy
         run: |
           aws cdk deploy
