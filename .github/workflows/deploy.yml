@@ -21,4 +21,5 @@ jobs:
           role-session-name: GitHubAction
       - name: Deploy
         run: |
+          npm ci
           npx aws-cdk deploy
